@@ -133,7 +133,6 @@ def nb2l(number):
                     raise ValueError('Too many digits')
                 if ngrp3 > 1 and nb3 > 1:
                     res += 's'
-            if nb3 > 0:
                 res += ' '
         grp3 = number[0:3]
         number = number[3:]
