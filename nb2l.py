@@ -123,8 +123,8 @@ def nb2l(number):
                         res += ' '
                 if ngrp3 % 100 != 0:
                     res += nom_1_99[(ngrp3 % 100) - 1]
-            # in French: milliers
             if nb3 > 0:
+                # in French: milliers
                 if ngrp3 != 1 or nb3 != 1:
                     res += ' '
                 try:
