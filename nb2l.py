@@ -32,6 +32,8 @@
 #     version 0.1: initial release
 #
 
+"""Convert numbers to literal French text."""
+
 from __future__ import division, print_function
 
 import sys
