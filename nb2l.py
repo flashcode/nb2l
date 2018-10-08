@@ -50,7 +50,7 @@ def nb2l(number):
     """
     nom_1_99 = (
         'un', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept', 'huit', 'neuf',
-        'dix', 'onze',  'douze', 'treize', 'quatorze', 'quinze', 'seize',
+        'dix', 'onze', 'douze', 'treize', 'quatorze', 'quinze', 'seize',
         'dix-sept', 'dix-huit', 'dix-neuf', 'vingt', 'vingt et un',
         'vingt-deux', 'vingt-trois', 'vingt-quatre', 'vingt-cinq', 'vingt-six',
         'vingt-sept', 'vingt-huit', 'vingt-neuf', 'trente', 'trente et un',
