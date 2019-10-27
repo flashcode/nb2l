@@ -10,7 +10,7 @@
 Numbers from `-999 999 999 999 999 999 999` to `999 999 999 999 999 999 999`
 are accepted.
 
-The script just requires Python >= 2.7.
+The script just requires Python >= 3.6.
 
 == Example
 

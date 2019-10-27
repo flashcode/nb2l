@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
 # Copyright (C) 2012-2019 Sébastien Helleu <flashcode@flashtux.org>
@@ -33,8 +33,6 @@
 #
 
 """Convert numbers to literal French text."""
-
-from __future__ import division, print_function
 
 import sys
 
@@ -145,13 +143,13 @@ def nb2l(number):  # pylint: disable=too-many-branches
 def main():
     """Main function."""
     if len(sys.argv) < 2:
-        sys.exit('Syntax: %s number [number...]' % sys.argv[0])
+        sys.exit(f'Syntax: {sys.argv[0]} number [number...]')
     for number in sys.argv[1:]:
         try:
             literal = nb2l(number)
             print(literal)
         except ValueError as exc:
-            print('%s: %s' % (number, exc))
+            print(f'{number}: {exc}')
 
 
 if __name__ == '__main__':
