@@ -36,7 +36,7 @@
 
 import sys
 
-VERSION = '1.0'
+VERSION = '1.1-dev'
 
 
 def nb2l(number):  # pylint: disable=too-many-branches
