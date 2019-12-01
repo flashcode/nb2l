@@ -38,6 +38,68 @@ import sys
 
 VERSION = '1.1-dev'
 
+nom_1_99 = (
+    'un', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept', 'huit', 'neuf',
+    'dix', 'onze', 'douze', 'treize', 'quatorze', 'quinze', 'seize',
+    'dix-sept', 'dix-huit', 'dix-neuf', 'vingt', 'vingt et un',
+    'vingt-deux', 'vingt-trois', 'vingt-quatre', 'vingt-cinq', 'vingt-six',
+    'vingt-sept', 'vingt-huit', 'vingt-neuf', 'trente', 'trente et un',
+    'trente-deux', 'trente-trois', 'trente-quatre', 'trente-cinq',
+    'trente-six', 'trente-sept', 'trente-huit', 'trente-neuf', 'quarante',
+    'quarante et un', 'quarante-deux', 'quarante-trois', 'quarante-quatre',
+    'quarante-cinq', 'quarante-six', 'quarante-sept', 'quarante-huit',
+    'quarante-neuf', 'cinquante', 'cinquante et un', 'cinquante-deux',
+    'cinquante-trois', 'cinquante-quatre', 'cinquante-cinq',
+    'cinquante-six', 'cinquante-sept', 'cinquante-huit', 'cinquante-neuf',
+    'soixante', 'soixante et un', 'soixante-deux', 'soixante-trois',
+    'soixante-quatre', 'soixante-cinq', 'soixante-six', 'soixante-sept',
+    'soixante-huit', 'soixante-neuf', 'soixante-dix', 'soixante et onze',
+    'soixante-douze', 'soixante-treize', 'soixante-quatorze',
+    'soixante-quinze', 'soixante-seize', 'soixante-dix-sept',
+    'soixante-dix-huit', 'soixante-dix-neuf', 'quatre-vingts',
+    'quatre-vingt-un', 'quatre-vingt-deux', 'quatre-vingt-trois',
+    'quatre-vingt-quatre', 'quatre-vingt-cinq', 'quatre-vingt-six',
+    'quatre-vingt-sept', 'quatre-vingt-huit', 'quatre-vingt-neuf',
+    'quatre-vingt-dix', 'quatre-vingt-onze', 'quatre-vingt-douze',
+    'quatre-vingt-treize', 'quatre-vingt-quatorze', 'quatre-vingt-quinze',
+    'quatre-vingt-seize', 'quatre-vingt-dix-sept', 'quatre-vingt-dix-huit',
+    'quatre-vingt-dix-neuf',
+)
+nom_milliers = (
+    'mille', 'million', 'milliard', 'billion', 'billiard', 'trillion',
+)
+
+
+def nb2l_add_hundreds(ngrp3):
+    """Return string for hundreds."""
+    res = ''
+    if ngrp3 > 99:
+        if ngrp3 // 100 > 1:
+            res += nom_1_99[(ngrp3 // 100) - 1] + ' '
+        res += 'cent'
+        if ngrp3 // 100 > 1 and ngrp3 % 100 == 0:
+            res += 's'
+        if ngrp3 % 100 != 0:
+            res += ' '
+    if ngrp3 % 100 != 0:
+        res += nom_1_99[(ngrp3 % 100) - 1]
+    return res
+
+
+def nb2l_add_thousands(ngrp3, nb3):
+    """Return string for thousands."""
+    res = ''
+    if ngrp3 != 1 or nb3 != 1:
+        res += ' '
+    try:
+        res += nom_milliers[nb3 - 1]
+    except IndexError:
+        raise OverflowError('Too many digits')
+    if ngrp3 > 1 and nb3 > 1:
+        res += 's'
+    res += ' '
+    return res
+
 
 def nb2l(number: int) -> str:  # pylint: disable=too-many-branches
     """
@@ -48,37 +110,6 @@ def nb2l(number: int) -> str:  # pylint: disable=too-many-branches
     :rtype: str
     :returns: literal French text
     """
-    nom_1_99 = (
-        'un', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept', 'huit', 'neuf',
-        'dix', 'onze', 'douze', 'treize', 'quatorze', 'quinze', 'seize',
-        'dix-sept', 'dix-huit', 'dix-neuf', 'vingt', 'vingt et un',
-        'vingt-deux', 'vingt-trois', 'vingt-quatre', 'vingt-cinq', 'vingt-six',
-        'vingt-sept', 'vingt-huit', 'vingt-neuf', 'trente', 'trente et un',
-        'trente-deux', 'trente-trois', 'trente-quatre', 'trente-cinq',
-        'trente-six', 'trente-sept', 'trente-huit', 'trente-neuf', 'quarante',
-        'quarante et un', 'quarante-deux', 'quarante-trois', 'quarante-quatre',
-        'quarante-cinq', 'quarante-six', 'quarante-sept', 'quarante-huit',
-        'quarante-neuf', 'cinquante', 'cinquante et un', 'cinquante-deux',
-        'cinquante-trois', 'cinquante-quatre', 'cinquante-cinq',
-        'cinquante-six', 'cinquante-sept', 'cinquante-huit', 'cinquante-neuf',
-        'soixante', 'soixante et un', 'soixante-deux', 'soixante-trois',
-        'soixante-quatre', 'soixante-cinq', 'soixante-six', 'soixante-sept',
-        'soixante-huit', 'soixante-neuf', 'soixante-dix', 'soixante et onze',
-        'soixante-douze', 'soixante-treize', 'soixante-quatorze',
-        'soixante-quinze', 'soixante-seize', 'soixante-dix-sept',
-        'soixante-dix-huit', 'soixante-dix-neuf', 'quatre-vingts',
-        'quatre-vingt-un', 'quatre-vingt-deux', 'quatre-vingt-trois',
-        'quatre-vingt-quatre', 'quatre-vingt-cinq', 'quatre-vingt-six',
-        'quatre-vingt-sept', 'quatre-vingt-huit', 'quatre-vingt-neuf',
-        'quatre-vingt-dix', 'quatre-vingt-onze', 'quatre-vingt-douze',
-        'quatre-vingt-treize', 'quatre-vingt-quatorze', 'quatre-vingt-quinze',
-        'quatre-vingt-seize', 'quatre-vingt-dix-sept', 'quatre-vingt-dix-huit',
-        'quatre-vingt-dix-neuf',
-    )
-    nom_milliers = (
-        'mille', 'million', 'milliard', 'billion', 'billiard', 'trillion',
-    )
-
     if not isinstance(number, int):
         raise TypeError('Number is not an integer')
 
@@ -105,34 +136,12 @@ def nb2l(number: int) -> str:  # pylint: disable=too-many-branches
         str_number = str_number[3:]
 
     while nb3 >= 0:
-        try:
-            ngrp3 = int(grp3)
-        except ValueError:
-            raise ValueError('Invalid integer number')
+        ngrp3 = int(grp3)
         if ngrp3 > 0:
             if ngrp3 != 1 or nb3 != 1:
-                # in French: centaines
-                if ngrp3 > 99:
-                    if ngrp3 // 100 > 1:
-                        res += nom_1_99[(ngrp3 // 100) - 1] + ' '
-                    res += 'cent'
-                    if ngrp3 // 100 > 1 and ngrp3 % 100 == 0:
-                        res += 's'
-                    if ngrp3 % 100 != 0:
-                        res += ' '
-                if ngrp3 % 100 != 0:
-                    res += nom_1_99[(ngrp3 % 100) - 1]
+                res += nb2l_add_hundreds(ngrp3)
             if nb3 > 0:
-                # in French: milliers
-                if ngrp3 != 1 or nb3 != 1:
-                    res += ' '
-                try:
-                    res += nom_milliers[nb3 - 1]
-                except IndexError:
-                    raise OverflowError('Too many digits')
-                if ngrp3 > 1 and nb3 > 1:
-                    res += 's'
-                res += ' '
+                res += nb2l_add_thousands(ngrp3, nb3)
         grp3 = str_number[0:3]
         str_number = str_number[3:]
         nb3 -= 1
