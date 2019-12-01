@@ -79,31 +79,33 @@ def nb2l(number):  # pylint: disable=too-many-branches
         'mille', 'million', 'milliard', 'billion', 'billiard', 'trillion',
     )
 
+    if not isinstance(number, int):
+        raise TypeError('Number is not an integer')
+
     res = ''
 
-    # remove any space
-    number = number.replace(' ', '')
-
     # negative number?
-    if number[0] == '-':
+    if number < 0:
         res += 'moins '
-        number = number[1:]
+        number *= -1
+
+    str_number = str(number)
 
     # strip leading zeroes and check if it's zero
-    if number[0] == '0':
-        number = number.lstrip('0')
-        if not number:
+    if str_number[0] == '0':
+        str_number = str_number.lstrip('0')
+        if not str_number:
             return 'zéro'
 
-    nb3 = len(number) // 3
-    nb3r = len(number) % 3
+    nb3 = len(str_number) // 3
+    nb3r = len(str_number) % 3
     if nb3r > 0:
-        grp3 = number[0:nb3r]
-        number = number[nb3r:]
+        grp3 = str_number[0:nb3r]
+        str_number = str_number[nb3r:]
     else:
         nb3 -= 1
-        grp3 = number[0:3]
-        number = number[3:]
+        grp3 = str_number[0:3]
+        str_number = str_number[3:]
 
     while nb3 >= 0:
         try:
@@ -134,8 +136,8 @@ def nb2l(number):  # pylint: disable=too-many-branches
                 if ngrp3 > 1 and nb3 > 1:
                     res += 's'
                 res += ' '
-        grp3 = number[0:3]
-        number = number[3:]
+        grp3 = str_number[0:3]
+        str_number = str_number[3:]
         nb3 -= 1
     return res
 
@@ -146,8 +148,7 @@ def main():
         sys.exit(f'Syntax: {sys.argv[0]} number [number...]')
     for number in sys.argv[1:]:
         try:
-            literal = nb2l(number)
-            print(literal)
+            print(nb2l(int(number)))
         except ValueError as exc:
             print(f'{number}: {exc}')
 
