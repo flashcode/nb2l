@@ -38,7 +38,7 @@ import sys
 
 VERSION = '1.1-dev'
 
-nom_1_99 = (
+NB2L_NUMBER_1_99 = (
     'un', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept', 'huit', 'neuf',
     'dix', 'onze', 'douze', 'treize', 'quatorze', 'quinze', 'seize',
     'dix-sept', 'dix-huit', 'dix-neuf', 'vingt', 'vingt et un',
@@ -65,7 +65,7 @@ nom_1_99 = (
     'quatre-vingt-seize', 'quatre-vingt-dix-sept', 'quatre-vingt-dix-huit',
     'quatre-vingt-dix-neuf',
 )
-nom_milliers = (
+NB2L_THOUSANDS = (
     'mille', 'million', 'milliard', 'billion', 'billiard', 'trillion',
 )
 
@@ -75,14 +75,14 @@ def nb2l_add_hundreds(ngrp3):
     res = ''
     if ngrp3 > 99:
         if ngrp3 // 100 > 1:
-            res += nom_1_99[(ngrp3 // 100) - 1] + ' '
+            res += NB2L_NUMBER_1_99[(ngrp3 // 100) - 1] + ' '
         res += 'cent'
         if ngrp3 // 100 > 1 and ngrp3 % 100 == 0:
             res += 's'
         if ngrp3 % 100 != 0:
             res += ' '
     if ngrp3 % 100 != 0:
-        res += nom_1_99[(ngrp3 % 100) - 1]
+        res += NB2L_NUMBER_1_99[(ngrp3 % 100) - 1]
     return res
 
 
@@ -92,7 +92,7 @@ def nb2l_add_thousands(ngrp3, nb3):
     if ngrp3 != 1 or nb3 != 1:
         res += ' '
     try:
-        res += nom_milliers[nb3 - 1]
+        res += NB2L_THOUSANDS[nb3 - 1]
     except IndexError:
         raise OverflowError('Too many digits')
     if ngrp3 > 1 and nb3 > 1:
