@@ -12,10 +12,21 @@ are accepted.
 
 The script just requires Python >= 3.6.
 
-== Example
+== Examples
+
+From Python:
+
+[source,python]
+----
+>>> from nb2l import nb2l
+>>> nb2l(123456)
+'cent vingt-trois mille quatre cent cinquante-six'
+----
+
+From command line:
 
 ----
-$ python nb2l.py 0 -15 123456 68247182
+$ python3 nb2l/nb2l.py 0 -15 123456 68247182
 zéro
 moins quinze
 cent vingt-trois mille quatre cent cinquante-six
