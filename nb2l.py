@@ -132,7 +132,7 @@ def nb2l(number: int) -> str:  # pylint: disable=too-many-branches
                 try:
                     res += nom_milliers[nb3 - 1]
                 except IndexError:
-                    raise ValueError('Too many digits')
+                    raise OverflowError('Too many digits')
                 if ngrp3 > 1 and nb3 > 1:
                     res += 's'
                 res += ' '
@@ -149,7 +149,7 @@ def main():
     for number in sys.argv[1:]:
         try:
             print(nb2l(int(number)))
-        except ValueError as exc:
+        except (ValueError, OverflowError) as exc:
             print(f'{number}: {exc}')
 
 
