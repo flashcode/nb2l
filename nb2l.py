@@ -139,7 +139,8 @@ def nb2l(number: int) -> str:  # pylint: disable=too-many-branches
         grp3 = str_number[0:3]
         str_number = str_number[3:]
         nb3 -= 1
-    return res
+
+    return res.rstrip()
 
 
 def main():
