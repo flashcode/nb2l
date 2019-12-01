@@ -82,20 +82,17 @@ def nb2l(number: int) -> str:  # pylint: disable=too-many-branches
     if not isinstance(number, int):
         raise TypeError('Number is not an integer')
 
+    if number == 0:
+        return 'zéro'
+
     res = ''
 
-    # negative number?
     if number < 0:
+        # negative number
         res += 'moins '
         number *= -1
 
     str_number = str(number)
-
-    # strip leading zeroes and check if it's zero
-    if str_number[0] == '0':
-        str_number = str_number.lstrip('0')
-        if not str_number:
-            return 'zéro'
 
     nb3 = len(str_number) // 3
     nb3r = len(str_number) % 3
