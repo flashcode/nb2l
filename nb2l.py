@@ -39,7 +39,7 @@ import sys
 VERSION = '1.1-dev'
 
 
-def nb2l(number):  # pylint: disable=too-many-branches
+def nb2l(number: int) -> str:  # pylint: disable=too-many-branches
     """
     Convert an integer number (as string) to literal French text.
 
