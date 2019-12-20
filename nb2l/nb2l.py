@@ -156,7 +156,7 @@ def main():
     for number in sys.argv[1:]:
         try:
             print(nb2l(int(number)))
-        except (ValueError, OverflowError) as exc:
+        except (ValueError, TypeError, OverflowError) as exc:
             print(f'{number}: {exc}')
 
 
