@@ -30,5 +30,5 @@ jobs:
         pylint nb2l/nb2l.py
     - name: Test with pytest
       run: |
-        pip install pytest
+        pip install coverage mock pytest pytest-cov
         pytest

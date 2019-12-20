@@ -160,5 +160,10 @@ def main():
             print(f'{number}: {exc}')
 
 
-if __name__ == '__main__':
-    main()
+def init():
+    """Init function."""
+    if __name__ == '__main__':
+        main()
+
+
+init()
