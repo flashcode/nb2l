@@ -31,4 +31,4 @@ jobs:
     - name: Test with pytest
       run: |
         pip install coverage mock pytest pytest-cov
-        pytest
+        pytest --cov-report term-missing --cov=nb2l
