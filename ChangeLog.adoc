@@ -7,6 +7,7 @@
 == Version 1.1 (under dev)
 
 * Format strings with f-strings (drop Python 2 support, require Python >= 3.6).
+* Add unit tests.
 
 == Version 1.0 (2017-02-19)
 
