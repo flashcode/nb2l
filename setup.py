@@ -26,10 +26,10 @@ DESCRIPTION = 'Convert numbers to literal French text.'
 LONG_DESCRIPTION = """
 Nb2l converts numbers to literal French text.
 
-Example:
+Example::
 
-$ nb2l 123456
-cent vingt-trois mille quatre cent cinquante-six
+    $ nb2l 123456
+    cent vingt-trois mille quatre cent cinquante-six
 """
 
 setup(
