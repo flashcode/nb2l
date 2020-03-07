@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
 # Copyright (C) 2012-2020 Sébastien Helleu <flashcode@flashtux.org>
