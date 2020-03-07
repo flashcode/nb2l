@@ -38,7 +38,7 @@
 
 import sys
 
-VERSION = '1.1-dev'
+__version__ = '1.1-dev'
 
 NB2L_NUMBER_1_99 = (
     'un', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept', 'huit', 'neuf',
@@ -70,6 +70,11 @@ NB2L_NUMBER_1_99 = (
 NB2L_THOUSANDS = (
     'mille', 'million', 'milliard', 'billion', 'billiard', 'trillion',
 )
+
+
+def nb2l_version():
+    """Return the nb2l version."""
+    return __version__
 
 
 def nb2l_add_hundreds(ngrp3):
