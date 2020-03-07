@@ -6,7 +6,7 @@
 image:https://img.shields.io/pypi/v/nb2l.svg["PyPI", link="https://pypi.org/project/nb2l/"]
 image:https://github.com/flashcode/nb2l/workflows/Tests/badge.svg["Tests", link="https://github.com/flashcode/nb2l/actions"]
 
-`nb2l.py` is a Python script to convert numbers to literal French text.
+Nb2l is a Python script to convert numbers to literal French text.
 
 Numbers from `-999 999 999 999 999 999 999` to `999 999 999 999 999 999 999`
 are accepted.
@@ -19,19 +19,19 @@ From Python:
 
 [source,python]
 ----
->>> from nb2l import nb2l
->>> nb2l(123456)
+>>> import nb2l
+>>> nb2l.nb2l(123456)
 'cent vingt-trois mille quatre cent cinquante-six'
 ----
 
 From command line:
 
 ----
-$ python3 nb2l/nb2l.py 0 -15 123456 68247182
+$ nb2l 0 -15 123456 6824718
 zéro
 moins quinze
 cent vingt-trois mille quatre cent cinquante-six
-soixante-huit millions deux cent quarante-sept mille cent quatre-vingt-deux
+six millions huit cent vingt-quatre mille sept cent dix-huit
 ----
 
 == Copyright

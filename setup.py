@@ -28,8 +28,11 @@ Nb2l converts numbers to literal French text.
 
 Example::
 
-    $ nb2l 123456
+    $ nb2l 0 -15 123456 6824718
+    zéro
+    moins quinze
     cent vingt-trois mille quatre cent cinquante-six
+    six millions huit cent vingt-quatre mille sept cent dix-huit
 """
 
 setup(
