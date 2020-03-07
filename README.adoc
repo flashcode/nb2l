@@ -3,6 +3,7 @@
 :email: flashcode@flashtux.org
 :lang: en
 
+image:https://img.shields.io/pypi/v/nb2l.svg["PyPI", link="https://pypi.org/project/nb2l/"]
 image:https://github.com/flashcode/nb2l/workflows/Tests/badge.svg["Tests", link="https://github.com/flashcode/nb2l/actions"]
 
 `nb2l.py` is a Python script to convert numbers to literal French text.
