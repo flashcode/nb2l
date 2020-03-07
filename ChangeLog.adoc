@@ -4,7 +4,7 @@
 :lang: en
 
 
-== Version 1.1 (under dev)
+== Version 1.1 (2020-03-07)
 
 * Format strings with f-strings (drop Python 2 support, require Python >= 3.6).
 * Add unit tests.
