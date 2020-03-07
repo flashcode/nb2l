@@ -19,8 +19,8 @@
 # along with nb2l.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-from setuptools import setup
-from nb2l.nb2l import nb2l_version
+from setuptools import setup, find_packages
+from nb2l import __version__ as nb2l_version
 
 DESCRIPTION = 'Convert numbers to literal French text.'
 LONG_DESCRIPTION = """
@@ -34,7 +34,7 @@ cent vingt-trois mille quatre cent cinquante-six
 
 setup(
     name='nb2l',
-    version=nb2l_version(),
+    version=nb2l_version,
     description=DESCRIPTION,
     long_description=LONG_DESCRIPTION,
     author='Sébastien Helleu',
@@ -54,9 +54,9 @@ setup(
         'Programming Language :: Python :: 3',
         'Topic :: Scientific/Engineering :: Mathematics',
     ],
-    packages=['nb2l'],
+    packages=find_packages(),
     tests_require=['pytest'],
     entry_points={
-        'console_scripts': ['nb2l=nb2l.nb2l:main'],
+        'console_scripts': ['nb2l=nb2l:main'],
     }
 )

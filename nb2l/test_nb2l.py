@@ -23,6 +23,7 @@
 
 import mock
 import pytest
+import sys
 
 
 def test_nb2l_invalid():
@@ -99,11 +100,11 @@ def test_nb2l_negative():
 def test_main():
     import nb2l
     with pytest.raises(SystemExit):
-        with mock.patch.object(nb2l.sys, 'argv', ['nb2l']):
+        with mock.patch.object(sys, 'argv', ['nb2l']):
             nb2l.main()
-    with mock.patch.object(nb2l.sys, 'argv', ['nb2l', '123']):
+    with mock.patch.object(sys, 'argv', ['nb2l', '123']):
         nb2l.main()
-    with mock.patch.object(nb2l.sys, 'argv', ['nb2l', 'abc']):
+    with mock.patch.object(sys, 'argv', ['nb2l', 'abc']):
         nb2l.main()
 
 
@@ -111,5 +112,5 @@ def test_init():
     import nb2l
     with mock.patch.object(nb2l, 'main', return_value=0):
         with mock.patch.object(nb2l, '__name__', '__main__'):
-            with mock.patch.object(nb2l.sys, 'exit'):
-                nb2l.init()
+            with mock.patch.object(sys, 'exit'):
+                nb2l.init(force=True)

@@ -72,11 +72,6 @@ NB2L_THOUSANDS = (
 )
 
 
-def nb2l_version():
-    """Return the nb2l version."""
-    return __version__
-
-
 def nb2l_add_hundreds(ngrp3):
     """Return string for hundreds."""
     res = ''
@@ -167,9 +162,9 @@ def main():
             print(f'{number}: {exc}')
 
 
-def init():
+def init(force=False):
     """Init function."""
-    if __name__ == '__main__':
+    if __name__ == '__main__' or force:
         main()
 
 

@@ -21,4 +21,9 @@
 
 """Convert numbers to literal French text."""
 
-from . import nb2l  # noqa: F401
+from .nb2l import (  # noqa: F401
+    __version__,
+    nb2l,
+    main,
+    init,
+)
