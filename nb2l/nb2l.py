@@ -38,7 +38,7 @@
 
 import sys
 
-__version__ = '1.2-dev'
+__version__ = '1.2'
 
 NB2L_NUMBER_1_99 = (
     'un', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept', 'huit', 'neuf',
