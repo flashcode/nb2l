@@ -19,8 +19,8 @@ From Python:
 
 [source,python]
 ----
->>> import nb2l
->>> nb2l.nb2l(123456)
+>>> from nb2l import nb2l
+>>> nb2l(123456)
 'cent vingt-trois mille quatre cent cinquante-six'
 ----
 
