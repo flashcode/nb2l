@@ -1,42 +1,37 @@
-= nb2l
-:author: Sébastien Helleu
-:email: flashcode@flashtux.org
-:lang: en
+# Nb2l
 
-image:https://img.shields.io/pypi/v/nb2l.svg["PyPI", link="https://pypi.org/project/nb2l/"]
-image:https://github.com/flashcode/nb2l/workflows/CI/badge.svg["CI", link="https://github.com/flashcode/nb2l/actions"]
+[![PyPI](https://img.shields.io/pypi/v/nb2l.svg)](https://pypi.org/project/nb2l/)
+[![Build Status](https://github.com/flashcode/nb2l/workflows/CI/badge.svg)](https://github.com/flashcode/nb2l/actions?query=workflow%3A%22CI%22)
 
 Nb2l is a Python script to convert numbers to literal French text.
 
-Numbers from `-999 999 999 999 999 999 999` to `999 999 999 999 999 999 999`
-are accepted.
+Numbers from `-999 999 999 999 999 999 999` to `999 999 999 999 999 999 999` are accepted.
 
-The script just requires Python >= 3.6.
+The script just requires Python ≥ 3.6.
 
-== Examples
+## Examples
 
 From Python:
 
-[source,python]
-----
+```python
 >>> from nb2l import nb2l
 >>> nb2l(123456)
 'cent vingt-trois mille quatre cent cinquante-six'
-----
+```
 
 From command line:
 
-----
+```
 $ nb2l 0 -15 123456 6824718
 zéro
 moins quinze
 cent vingt-trois mille quatre cent cinquante-six
 six millions huit cent vingt-quatre mille sept cent dix-huit
-----
+```
 
-== Copyright
+## Copyright
 
-Copyright (C) 2012-2020 Sébastien Helleu <flashcode@flashtux.org>
+Copyright © 2012-2020 [Sébastien Helleu](https://github.com/flashcode)
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
