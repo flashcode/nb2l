@@ -94,8 +94,8 @@ def nb2l_add_thousands(ngrp3, nb3):
         res += ' '
     try:
         res += NB2L_THOUSANDS[nb3 - 1]
-    except IndexError:
-        raise OverflowError('Too many digits')
+    except IndexError as exc:
+        raise OverflowError('Too many digits') from exc
     if ngrp3 > 1 and nb3 > 1:
         res += 's'
     res += ' '
