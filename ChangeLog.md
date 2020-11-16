@@ -1,7 +1,8 @@
 # Nb2l ChangeLog
 
-## Version 1.3 (under dev)
+## Version 1.3.0 (under dev)
 
+- Switch to Semantic Versioning.
 - Convert README and ChangeLog to markdown.
 - Fix "Intended Audience" in setup.py.
 
