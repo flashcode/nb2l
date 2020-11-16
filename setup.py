@@ -18,27 +18,21 @@
 # along with nb2l.  If not, see <https://www.gnu.org/licenses/>.
 #
 
+from codecs import open
 from setuptools import setup, find_packages
 from nb2l import __version__ as nb2l_version
 
 DESCRIPTION = 'Convert numbers to literal French text.'
-LONG_DESCRIPTION = """
-Nb2l converts numbers to literal French text.
 
-Example::
-
-    $ nb2l 0 -15 123456 6824718
-    zéro
-    moins quinze
-    cent vingt-trois mille quatre cent cinquante-six
-    six millions huit cent vingt-quatre mille sept cent dix-huit
-"""
+with open('README.md', 'r', 'utf-8') as f:
+    readme = f.read()
 
 setup(
     name='nb2l',
     version=nb2l_version,
     description=DESCRIPTION,
-    long_description=LONG_DESCRIPTION,
+    long_description=readme,
+    long_description_content_type='text/markdown',
     author='Sébastien Helleu',
     author_email='flashcode@flashtux.org',
     url='https://github.com/flashcode/nb2l',
