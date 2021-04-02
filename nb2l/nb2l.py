@@ -71,7 +71,7 @@ NB2L_THOUSANDS = (
 )
 
 
-def nb2l_add_hundreds(ngrp3):
+def nb2l_add_hundreds(ngrp3: int) -> str:
     """Return string for hundreds."""
     res = ''
     if ngrp3 > 99:
@@ -87,7 +87,7 @@ def nb2l_add_hundreds(ngrp3):
     return res
 
 
-def nb2l_add_thousands(ngrp3, nb3):
+def nb2l_add_thousands(ngrp3: int, nb3: int) -> str:
     """Return string for thousands."""
     res = ''
     if ngrp3 != 1 or nb3 != 1:
@@ -106,10 +106,9 @@ def nb2l(number: int) -> str:  # pylint: disable=too-many-branches
     """
     Convert an integer number (as string) to literal French text.
 
-    :param: str,unicode: the number to convert, as string
-            (from -999 999 999 999 999 999 999 to 999 999 999 999 999 999 999)
-    :rtype: str
-    :returns: literal French text
+    :param number: the number to convert, as string
+        (from -999 999 999 999 999 999 999 to 999 999 999 999 999 999 999)
+    :return: literal French text
     """
     if not isinstance(number, int):
         raise TypeError('Number is not an integer')
@@ -161,7 +160,7 @@ def main():
             print(f'{number}: {exc}')
 
 
-def init(force=False):
+def init(force: bool = False):
     """Init function."""
     if __name__ == '__main__' or force:
         main()

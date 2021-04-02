@@ -21,7 +21,7 @@ all: check
 
 check: lint test
 
-lint: flake8 pylint
+lint: flake8 pylint mypy
 
 flake8:
 	flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
@@ -29,6 +29,9 @@ flake8:
 
 pylint:
 	pylint nb2l
+
+mypy:
+	mypy nb2l
 
 test:
 	pytest -vv --cov-report term-missing --cov=nb2l
