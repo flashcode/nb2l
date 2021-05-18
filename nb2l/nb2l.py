@@ -149,7 +149,7 @@ def nb2l(number: int) -> str:  # pylint: disable=too-many-branches
     return res.rstrip()
 
 
-def main():
+def main() -> None:
     """Main function."""
     if len(sys.argv) < 2:
         sys.exit(f'Syntax: {sys.argv[0]} number [number...]')
@@ -160,7 +160,7 @@ def main():
             print(f'{number}: {exc}')
 
 
-def init(force: bool = False):
+def init(force: bool = False) -> None:
     """Init function."""
     if __name__ == '__main__' or force:
         main()
