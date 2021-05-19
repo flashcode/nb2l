@@ -37,51 +37,130 @@
 
 import sys
 
-__version__ = '1.3.0-dev'
+__version__ = "1.3.0-dev"
 
 NB2L_NUMBER_1_99 = (
-    'un', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept', 'huit', 'neuf',
-    'dix', 'onze', 'douze', 'treize', 'quatorze', 'quinze', 'seize',
-    'dix-sept', 'dix-huit', 'dix-neuf', 'vingt', 'vingt et un',
-    'vingt-deux', 'vingt-trois', 'vingt-quatre', 'vingt-cinq', 'vingt-six',
-    'vingt-sept', 'vingt-huit', 'vingt-neuf', 'trente', 'trente et un',
-    'trente-deux', 'trente-trois', 'trente-quatre', 'trente-cinq',
-    'trente-six', 'trente-sept', 'trente-huit', 'trente-neuf', 'quarante',
-    'quarante et un', 'quarante-deux', 'quarante-trois', 'quarante-quatre',
-    'quarante-cinq', 'quarante-six', 'quarante-sept', 'quarante-huit',
-    'quarante-neuf', 'cinquante', 'cinquante et un', 'cinquante-deux',
-    'cinquante-trois', 'cinquante-quatre', 'cinquante-cinq',
-    'cinquante-six', 'cinquante-sept', 'cinquante-huit', 'cinquante-neuf',
-    'soixante', 'soixante et un', 'soixante-deux', 'soixante-trois',
-    'soixante-quatre', 'soixante-cinq', 'soixante-six', 'soixante-sept',
-    'soixante-huit', 'soixante-neuf', 'soixante-dix', 'soixante et onze',
-    'soixante-douze', 'soixante-treize', 'soixante-quatorze',
-    'soixante-quinze', 'soixante-seize', 'soixante-dix-sept',
-    'soixante-dix-huit', 'soixante-dix-neuf', 'quatre-vingts',
-    'quatre-vingt-un', 'quatre-vingt-deux', 'quatre-vingt-trois',
-    'quatre-vingt-quatre', 'quatre-vingt-cinq', 'quatre-vingt-six',
-    'quatre-vingt-sept', 'quatre-vingt-huit', 'quatre-vingt-neuf',
-    'quatre-vingt-dix', 'quatre-vingt-onze', 'quatre-vingt-douze',
-    'quatre-vingt-treize', 'quatre-vingt-quatorze', 'quatre-vingt-quinze',
-    'quatre-vingt-seize', 'quatre-vingt-dix-sept', 'quatre-vingt-dix-huit',
-    'quatre-vingt-dix-neuf',
+    "un",
+    "deux",
+    "trois",
+    "quatre",
+    "cinq",
+    "six",
+    "sept",
+    "huit",
+    "neuf",
+    "dix",
+    "onze",
+    "douze",
+    "treize",
+    "quatorze",
+    "quinze",
+    "seize",
+    "dix-sept",
+    "dix-huit",
+    "dix-neuf",
+    "vingt",
+    "vingt et un",
+    "vingt-deux",
+    "vingt-trois",
+    "vingt-quatre",
+    "vingt-cinq",
+    "vingt-six",
+    "vingt-sept",
+    "vingt-huit",
+    "vingt-neuf",
+    "trente",
+    "trente et un",
+    "trente-deux",
+    "trente-trois",
+    "trente-quatre",
+    "trente-cinq",
+    "trente-six",
+    "trente-sept",
+    "trente-huit",
+    "trente-neuf",
+    "quarante",
+    "quarante et un",
+    "quarante-deux",
+    "quarante-trois",
+    "quarante-quatre",
+    "quarante-cinq",
+    "quarante-six",
+    "quarante-sept",
+    "quarante-huit",
+    "quarante-neuf",
+    "cinquante",
+    "cinquante et un",
+    "cinquante-deux",
+    "cinquante-trois",
+    "cinquante-quatre",
+    "cinquante-cinq",
+    "cinquante-six",
+    "cinquante-sept",
+    "cinquante-huit",
+    "cinquante-neuf",
+    "soixante",
+    "soixante et un",
+    "soixante-deux",
+    "soixante-trois",
+    "soixante-quatre",
+    "soixante-cinq",
+    "soixante-six",
+    "soixante-sept",
+    "soixante-huit",
+    "soixante-neuf",
+    "soixante-dix",
+    "soixante et onze",
+    "soixante-douze",
+    "soixante-treize",
+    "soixante-quatorze",
+    "soixante-quinze",
+    "soixante-seize",
+    "soixante-dix-sept",
+    "soixante-dix-huit",
+    "soixante-dix-neuf",
+    "quatre-vingts",
+    "quatre-vingt-un",
+    "quatre-vingt-deux",
+    "quatre-vingt-trois",
+    "quatre-vingt-quatre",
+    "quatre-vingt-cinq",
+    "quatre-vingt-six",
+    "quatre-vingt-sept",
+    "quatre-vingt-huit",
+    "quatre-vingt-neuf",
+    "quatre-vingt-dix",
+    "quatre-vingt-onze",
+    "quatre-vingt-douze",
+    "quatre-vingt-treize",
+    "quatre-vingt-quatorze",
+    "quatre-vingt-quinze",
+    "quatre-vingt-seize",
+    "quatre-vingt-dix-sept",
+    "quatre-vingt-dix-huit",
+    "quatre-vingt-dix-neuf",
 )
 NB2L_THOUSANDS = (
-    'mille', 'million', 'milliard', 'billion', 'billiard', 'trillion',
+    "mille",
+    "million",
+    "milliard",
+    "billion",
+    "billiard",
+    "trillion",
 )
 
 
 def nb2l_add_hundreds(ngrp3: int) -> str:
     """Return string for hundreds."""
-    res = ''
+    res = ""
     if ngrp3 > 99:
         if ngrp3 // 100 > 1:
-            res += NB2L_NUMBER_1_99[(ngrp3 // 100) - 1] + ' '
-        res += 'cent'
+            res += NB2L_NUMBER_1_99[(ngrp3 // 100) - 1] + " "
+        res += "cent"
         if ngrp3 // 100 > 1 and ngrp3 % 100 == 0:
-            res += 's'
+            res += "s"
         if ngrp3 % 100 != 0:
-            res += ' '
+            res += " "
     if ngrp3 % 100 != 0:
         res += NB2L_NUMBER_1_99[(ngrp3 % 100) - 1]
     return res
@@ -89,16 +168,16 @@ def nb2l_add_hundreds(ngrp3: int) -> str:
 
 def nb2l_add_thousands(ngrp3: int, nb3: int) -> str:
     """Return string for thousands."""
-    res = ''
+    res = ""
     if ngrp3 != 1 or nb3 != 1:
-        res += ' '
+        res += " "
     try:
         res += NB2L_THOUSANDS[nb3 - 1]
     except IndexError as exc:
-        raise OverflowError('Too many digits') from exc
+        raise OverflowError("Too many digits") from exc
     if ngrp3 > 1 and nb3 > 1:
-        res += 's'
-    res += ' '
+        res += "s"
+    res += " "
     return res
 
 
@@ -111,16 +190,16 @@ def nb2l(number: int) -> str:  # pylint: disable=too-many-branches
     :return: literal French text
     """
     if not isinstance(number, int):
-        raise TypeError('Number is not an integer')
+        raise TypeError("Number is not an integer")
 
     if number == 0:
-        return 'zéro'
+        return "zéro"
 
-    res = ''
+    res = ""
 
     if number < 0:
         # negative number
-        res += 'moins '
+        res += "moins "
         number *= -1
 
     str_number = str(number)
@@ -152,17 +231,17 @@ def nb2l(number: int) -> str:  # pylint: disable=too-many-branches
 def main() -> None:
     """Main function."""
     if len(sys.argv) < 2:
-        sys.exit(f'Syntax: {sys.argv[0]} number [number...]')
+        sys.exit(f"Syntax: {sys.argv[0]} number [number...]")
     for number in sys.argv[1:]:
         try:
             print(nb2l(int(number)))
         except (ValueError, TypeError, OverflowError) as exc:
-            print(f'{number}: {exc}')
+            print(f"{number}: {exc}")
 
 
 def init(force: bool = False) -> None:
     """Init function."""
-    if __name__ == '__main__' or force:
+    if __name__ == "__main__" or force:
         main()
 
 
