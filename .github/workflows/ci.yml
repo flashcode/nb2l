@@ -34,7 +34,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install bandit coverage flake8 mock mypy pylint pytest pytest-cov
+          pip install bandit coverage flake8 mock mypy pylint pytest pytest-cov types-mock
 
       - name: Lint with flake8
         run: make flake8
