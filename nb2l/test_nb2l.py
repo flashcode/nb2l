@@ -31,13 +31,13 @@ import nb2l
 def test_nb2l_invalid() -> None:
     """Test invalid numbers."""
     with pytest.raises(TypeError):
-        nb2l.nb2l()  # pylint: disable=no-value-for-parameter
+        nb2l.nb2l()  # type: ignore  # pylint: disable=no-value-for-parameter
 
     with pytest.raises(TypeError):
-        nb2l.nb2l('123')
+        nb2l.nb2l('123')  # type: ignore
 
     with pytest.raises(TypeError):
-        nb2l.nb2l(123.5)
+        nb2l.nb2l(123.5)  # type: ignore
 
 
 def test_nb2l_simple() -> None:
