@@ -28,7 +28,7 @@ import pytest
 import nb2l
 
 
-def test_nb2l_invalid():
+def test_nb2l_invalid() -> None:
     """Test invalid numbers."""
     with pytest.raises(TypeError):
         nb2l.nb2l()  # pylint: disable=no-value-for-parameter
@@ -40,7 +40,7 @@ def test_nb2l_invalid():
         nb2l.nb2l(123.5)
 
 
-def test_nb2l_simple():
+def test_nb2l_simple() -> None:
     """Test simple numbers."""
     assert nb2l.nb2l(0) == 'zéro'
     assert nb2l.nb2l(1) == 'un'
@@ -51,7 +51,7 @@ def test_nb2l_simple():
     assert nb2l.nb2l(200) == 'deux cents'
 
 
-def test_nb2l_large():
+def test_nb2l_large() -> None:
     """Test large numbers."""
     assert nb2l.nb2l(123_456_789) == """\
 cent vingt-trois millions \
@@ -72,7 +72,7 @@ douze\
     assert nb2l.nb2l(2_000_000_000_000_000_000) == 'deux trillions'
 
 
-def test_nb2l_overflow():
+def test_nb2l_overflow() -> None:
     """Test too big numbers."""
     with pytest.raises(OverflowError):
         assert nb2l.nb2l(2_000_000_000_000_000_000_000)
@@ -87,14 +87,14 @@ def test_nb2l_overflow():
         assert nb2l.nb2l(2_000_000_000_000_000_000_000_000_000_000)
 
 
-def test_nb2l_negative():
+def test_nb2l_negative() -> None:
     """Test negative numbers."""
     assert nb2l.nb2l(-0) == 'zéro'
     assert nb2l.nb2l(-1) == 'moins un'
     assert nb2l.nb2l(-123) == 'moins cent vingt-trois'
 
 
-def test_main():
+def test_main() -> None:
     """Test main function."""
     with pytest.raises(SystemExit):
         with mock.patch.object(sys, 'argv', ['nb2l']):
@@ -105,7 +105,7 @@ def test_main():
         nb2l.main()
 
 
-def test_init():
+def test_init() -> None:
     """Test init function"""
     with mock.patch.object(nb2l, 'main', return_value=0):
         with mock.patch.object(nb2l, '__name__', '__main__'):
