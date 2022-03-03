@@ -26,3 +26,10 @@ from .nb2l import (  # noqa: F401
     main,
     init,
 )
+
+__all__ = (
+    "__version__",
+    "nb2l",
+    "main",
+    "init",
+)

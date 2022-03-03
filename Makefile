@@ -31,7 +31,7 @@ pylint:
 	pylint nb2l
 
 mypy:
-	mypy nb2l
+	mypy --strict nb2l
 
 bandit:
 	bandit nb2l/nb2l.py
