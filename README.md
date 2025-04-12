@@ -1,8 +1,9 @@
 # Nb2l
 
 [![PyPI](https://img.shields.io/pypi/v/nb2l.svg)](https://pypi.org/project/nb2l/)
-[![Build Status](https://github.com/flashcode/nb2l/workflows/CI/badge.svg)](https://github.com/flashcode/nb2l/actions?query=workflow%3A%22CI%22)
+[![Build status](https://github.com/flashcode/nb2l/workflows/CI/badge.svg)](https://github.com/flashcode/nb2l/actions?query=workflow%3A%22CI%22)
 [![CodeQL](https://github.com/flashcode/nb2l/workflows/CodeQL/badge.svg)](https://github.com/flashcode/nb2l/actions?query=workflow%3A%22CodeQL%22)
+[![REUSE status](https://api.reuse.software/badge/github.com/flashcode/nb2l)](https://api.reuse.software/info/github.com/flashcode/nb2l)
 
 Nb2l is a Python script to convert numbers to literal French text.
 
