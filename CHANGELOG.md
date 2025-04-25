@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2017-2025 Sébastien Helleu <flashcode@flashtux.org>
+
+SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
 # Nb2l ChangeLog
 
 ## Version 1.3.0 (under dev)

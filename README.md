@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2017-2025 Sébastien Helleu <flashcode@flashtux.org>
+
+SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
 # Nb2l
 
 [![PyPI](https://img.shields.io/pypi/v/nb2l.svg)](https://pypi.org/project/nb2l/)
@@ -33,6 +39,7 @@ six millions huit cent vingt-quatre mille sept cent dix-huit
 
 ## Copyright
 
+<!-- REUSE-IgnoreStart -->
 Copyright © 2012-2025 [Sébastien Helleu](https://github.com/flashcode)
 
 This program is free software; you can redistribute it and/or modify
@@ -47,3 +54,4 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
+<!-- REUSE-IgnoreEnd -->
