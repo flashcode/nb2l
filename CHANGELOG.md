@@ -4,9 +4,9 @@ SPDX-FileCopyrightText: 2017-2025 Sébastien Helleu <flashcode@flashtux.org>
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
-# Nb2l ChangeLog
+# Changelog
 
-## Version 1.3.0 (under dev)
+## [Unreleased]
 
 ### Changed
 
@@ -17,14 +17,14 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
 - Fix "Intended Audience" in setup.py
 
-## Version 1.2 (2020-03-08)
+## [1.2] - 2020-03-08
 
 ### Fixed
 
 - Fix examples in README and setup.py
 - Fix nb2l module installation
 
-## Version 1.1 (2020-03-07)
+## [1.1] - 2020-03-07
 
 ### Changed
 
@@ -34,8 +34,12 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
 - Add unit tests
 
-## Version 1.0 (2017-02-19)
+## 1.0 - 2017-02-19
 
 ### Added
 
 - First release
+
+[Unreleased]: https://github.com/flashcode/nb2l/compare/v1.2...HEAD
+[1.2]: https://github.com/flashcode/nb2l/compare/v1.1...v1.2
+[1.1]: https://github.com/flashcode/nb2l/releases/tag/v1.1
